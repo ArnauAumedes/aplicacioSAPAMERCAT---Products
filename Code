@@ -1,0 +1,127 @@
+
+// Import the product classes: You need to import the Producte, Alimentacio, Textil, and Electronica classes from the model.producte package.
+/* import model.producte.Producte;
+import model.producte.Alimentacio;
+import model.producte.Textil;
+import model.producte.Electronica; */
+
+private static void introduirProducteAlimentacio() {
+        System.out.println("Introdueix les dades del producte d'alimentació:");
+        System.out.print("Nom: ");
+        String nom = scan.nextLine();
+
+        int preu;
+        while (true) {
+            System.out.print("Preu: ");
+            try {
+                preu = Integer.parseInt(scan.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Si us plau, introdueix un valor enter per al preu.");
+            }
+        }
+
+        int codiBarres;
+        while (true) {
+            System.out.print("Codi de barres: ");
+            try {
+                codiBarres = Integer.parseInt(scan.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Si us plau, introdueix un valor enter per al codi de barres.");
+            }
+        }
+
+        int dataCaducitat;
+        while (true) {
+            System.out.print("Data de caducitat (YYYYMMDD): ");
+            try {
+                dataCaducitat = Integer.parseInt(scan.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Si us plau, introdueix un valor enter per a la data de caducitat.");
+            }
+        }
+
+        Alimentacio producte = new Alimentacio(preu, nom, codiBarres, dataCaducitat);
+        Model.intoduirProducteCarro(carroCompra, producte);
+        System.out.println("Producte d'alimentació afegit correctament.");
+    }
+
+    private static void introduirProducteTextil() {
+        System.out.println("Introdueix les dades del producte tèxtil:");
+        System.out.print("Nom: ");
+        String nom = scan.nextLine();
+
+        int preu;
+        while (true) {
+            System.out.print("Preu: ");
+            try {
+                preu = Integer.parseInt(scan.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Si us plau, introdueix un valor enter per al preu.");
+            }
+        }
+
+        int codiBarres;
+        while (true) {
+            System.out.print("Codi de barres: ");
+            try {
+                codiBarres = Integer.parseInt(scan.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Si us plau, introdueix un valor enter per al codi de barres.");
+            }
+        }
+
+        System.out.print("Composició tèxtil: ");
+        String composicioTextil = scan.nextLine();
+
+        Textil producte = new Textil(preu, nom, codiBarres, composicioTextil);
+        Model.intoduirProducteCarro(carroCompra, producte);
+        System.out.println("Producte tèxtil afegit correctament.");
+    }
+
+    private static void introduirProducteElectronica() {
+        System.out.println("Introdueix les dades del producte d'electrònica:");
+        System.out.print("Nom: ");
+        String nom = scan.nextLine();
+
+        int preu;
+        while (true) {
+            System.out.print("Preu: ");
+            try {
+                preu = Integer.parseInt(scan.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Si us plau, introdueix un valor enter per al preu.");
+            }
+        }
+
+        int codiBarres;
+        while (true) {
+            System.out.print("Codi de barres: ");
+            try {
+                codiBarres = Integer.parseInt(scan.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Si us plau, introdueix un valor enter per al codi de barres.");
+            }
+        }
+
+        int garantia;
+        while (true) {
+            System.out.print("Garantia (anys): ");
+            try {
+                garantia = Integer.parseInt(scan.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Si us plau, introdueix un valor enter per a la garantia.");
+            }
+        }
+
+        Electronica producte = new Electronica(preu, nom, codiBarres, garantia);
+        Model.intoduirProducteCarro(carroCompra, producte);
+        System.out.println("Producte d'electrònica afegit correctament.");
+    }
